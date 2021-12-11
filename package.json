@@ -1,0 +1,20 @@
+{
+  "name": "typescript-algorithms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/childrentime/typescript-algorithms.git",
+  "author": "儿时 <58261676+childrentime@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "babel-jest": "^27.4.4",
+    "jest": "^27.4.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  }
+}
