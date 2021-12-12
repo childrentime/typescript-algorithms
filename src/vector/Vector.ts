@@ -157,4 +157,8 @@ export default class Vector<T> {
     const ind = index ?? this.elementCount;
     return this.elementData.lastIndexOf(obj, ind);
   }
+
+  public toArray(): Array<T> {
+    return this.elementData.filter(item => item);
+  }
 }

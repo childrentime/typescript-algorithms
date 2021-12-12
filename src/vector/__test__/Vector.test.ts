@@ -119,6 +119,14 @@ describe('Vector', () => {
     expect(clone.toString()).toEqual('1,2');
   });
 
+  it('should check toArray method', () => {
+    const vector = new Vector<number>();
+    vector.addElement(1);
+    vector.addElement(2);
+    const array = vector.toArray();
+    expect(array.toString()).toEqual('1,2');
+  });
+
   it('should check error handle', () => {
     const vector = new Vector<number>();
     expect(() => new Vector(-10, 1)).toThrow('Illegal Capacity: -10');
