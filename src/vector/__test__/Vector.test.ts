@@ -91,6 +91,7 @@ describe('Vector', () => {
     vector.addElement(1);
     vector.addElement(2);
     vector.removeElement(1);
+    expect(vector.removeElement(3)).toBe(false);
     expect(vector.toString()).toBe('2');
     vector.addElement(3);
     vector.removeElementAt(0);
@@ -116,5 +117,21 @@ describe('Vector', () => {
     const clone = vector.clone();
     expect(clone === vector).toBe(false);
     expect(clone.toString()).toEqual('1,2');
+  });
+
+  it('should check error handle', () => {
+    const vector = new Vector<number>();
+    expect(() => new Vector(-10, 1)).toThrow('Illegal Capacity: -10');
+    expect(() => vector.firstElement()).toThrow('no such element');
+    expect(() => vector.lastElement()).toThrow('no such element');
+    expect(() => vector.elementAt(0)).toThrow('element index 0 out of 0');
+    expect(() => vector.setElementAt(1, 0)).toThrow('element index 0 out of 0');
+    expect(() => vector.insertElementAt(1, 1)).toThrow(
+      'element index 1 out of 0'
+    );
+    expect(() => vector.removeElementAt(0)).toThrow('element index 0 out of 0');
+    expect(() => vector.removeElementAt(-1)).toThrow(
+      'element index -1 out of 0'
+    );
   });
 });
