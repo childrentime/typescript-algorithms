@@ -1,9 +1,9 @@
 export default class LinkedListNode<T> {
   public item: T;
-  public next: LinkedListNode<T>;
-  public prev: LinkedListNode<T>;
+  public next: LinkedListNode<T> | null ;
+  public prev: LinkedListNode<T> | null ;
 
-  constructor(item: T, prev: LinkedListNode<T>, next: LinkedListNode<T>) {
+  constructor( prev: LinkedListNode<T> | null,item: T, next: LinkedListNode<T> | null) {
     this.item = item;
     this.prev = prev;
     this.next = next;
