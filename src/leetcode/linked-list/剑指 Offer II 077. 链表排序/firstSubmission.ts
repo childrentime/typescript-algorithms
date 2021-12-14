@@ -9,20 +9,15 @@
  *     }
  * }
  */
-class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+
+import ListNode from "./ListNode";
+
 /*
  * https://leetcode-cn.com/problems/7WHec2/
  * 思路：遍历链表，将值存入array中，利用array的sort方法进行排序
  * 再利用array构造链表
  */
-function sortList(head: ListNode | null): ListNode | null {
+export function sortList(head: ListNode | null): ListNode | null {
   let array: Array<number> = [];
   let currentNode = head;
   while (currentNode !== null) {
