@@ -1,3 +1,3 @@
 # Typescript Algorithms
 
-> Attention: this is only a personal exercise
+> typescript algorithm all in one
