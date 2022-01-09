@@ -1,6 +1,7 @@
 import insertSort from '../insertSort';
 import { quickSort, quickSort2 } from '../quickSort';
 import selectSort from '../selectSort';
+import shellSort from '../shellSort';
 
 describe('Sort', () => {
   it('QuickSort', () => {
@@ -21,6 +22,12 @@ describe('Sort', () => {
   it('InsertSort', () => {
     const array = [5, 3, 1, 2, 4];
     insertSort(array);
+    expect(array.toString()).toBe('1,2,3,4,5');
+  });
+
+  it('shellSort', () => {
+    const array = [5, 3, 1, 2, 4];
+    shellSort(array);
     expect(array.toString()).toBe('1,2,3,4,5');
   });
 });
