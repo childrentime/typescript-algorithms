@@ -80,7 +80,10 @@ export default class PriorityQueue<T extends Object> {
       let object = this._queue[child];
       let right = child + 1;
       // compare left right child, assgn child the bigger one
-      if (right < this._size && this._comparator!(object, this._queue[right]) > 0) {
+      if (
+        right < this._size &&
+        this._comparator!(object, this._queue[right]) > 0
+      ) {
         object = this._queue[(child = right)];
       }
       //compare item and child if bigger is item, break
@@ -145,7 +148,7 @@ export default class PriorityQueue<T extends Object> {
     let s = --this._size;
     let result = <T>this._queue[0];
     let x = <T>this._queue[s];
-    this._queue.slice(s, 1);
+    this._queue.splice(s, 1);
     if (s !== 0) {
       this.sink(0, x);
     }
