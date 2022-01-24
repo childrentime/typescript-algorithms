@@ -4,11 +4,8 @@ export function countBits(n: number): number[] {
     let count = 0;
     let tem = i;
     while (tem !== 0) {
-      const v = tem & -tem;
-      if (v === 1) {
-        count++;
-      }
-      tem >>= 1;
+      count++;
+      tem = tem & (tem - 1);
     }
     answer.push(count);
   }
