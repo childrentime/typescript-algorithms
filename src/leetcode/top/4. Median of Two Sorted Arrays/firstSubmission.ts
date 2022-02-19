@@ -23,7 +23,10 @@ const findK = (arr1: number[], arr2: number[], k: number): number => {
     }
   }
 };
-function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+export function findMedianSortedArrays(
+  nums1: number[],
+  nums2: number[]
+): number {
   const n = nums1.length + nums2.length;
   return (
     (findK(nums1, nums2, n >>> 1) + findK(nums1, nums2, (n - 1) >>> 1)) / 2
