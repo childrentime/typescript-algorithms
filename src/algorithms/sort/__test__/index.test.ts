@@ -1,7 +1,7 @@
-import heapSort from '../heapsort';
+import heapSort from '../heapSort';
 import insertSort from '../insertSort';
 import mergeSort from '../mergeSort';
-import { quickSort, quickSort2 } from '../quickSort';
+import { quickSort, quickSort2, quickSort3 } from '../quickSort';
 import selectSort from '../selectSort';
 import shellSort from '../shellSort';
 
@@ -13,6 +13,15 @@ describe('Sort', () => {
     quickSort2(array, 0, 4);
 
     expect(array.toString()).toBe('1,2,3,4,5');
+
+    const arr = [
+      9, 100, 1000, 5, 4, 43254, 543, 5342, 5324, 543, 523, 1, 4312, 4123, 4123,
+      45321, 532432
+    ];
+    quickSort3(arr, 0, arr.length - 1);
+    expect(arr.toString()).toBe(
+      '1,4,5,9,100,523,543,543,1000,4123,4123,4312,5324,5342,43254,45321,532432'
+    );
   });
 
   it('SelectSort', () => {

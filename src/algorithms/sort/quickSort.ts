@@ -48,3 +48,37 @@ export function quickSort2(arr: any[], left: number, right: number): void {
   quickSort2(arr, left, l - 1);
   quickSort2(arr, l + 1, right);
 }
+
+export function quickSort3(arr: number[], left: number, right: number) {
+  const partition = (left: number, right: number) => {
+    const x = arr[left]!;
+    while (left < right) {
+      while (left < right && x <= arr[right]!) {
+        right--;
+      }
+      arr[left] = arr[right]!;
+      while (left < right && x >= arr[left]!) {
+        left++;
+      }
+      arr[right] = arr[left]!;
+    }
+    arr[left] = x;
+    return left;
+  };
+
+  const stack: number[] = [];
+  stack.push(left, right);
+  while (stack.length) {
+    const r = stack.pop()!;
+    const l = stack.pop()!;
+    const index = partition(l, r);
+    if (index - 1 > l) {
+      stack.push(l);
+      stack.push(index - 1);
+    }
+    if (index + 1 < r) {
+      stack.push(index + 1);
+      stack.push(r);
+    }
+  }
+}
