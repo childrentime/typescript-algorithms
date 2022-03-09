@@ -13,7 +13,7 @@ export function serialize(root: TreeNode | null): string {
       result.push('x');
     }
   }
-  return result.join('');
+  return result.join(',');
 }
 
 /*
@@ -23,7 +23,7 @@ export function deserialize(data: string): TreeNode | null {
   if (data === 'x') {
     return null;
   }
-  const array = data.split('');
+  const array = data.split(',');
   const root = new TreeNode(Number(array[0]!));
   const queue: TreeNode[] = [root];
   let point = 1;
