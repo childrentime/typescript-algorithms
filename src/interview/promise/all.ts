@@ -1,4 +1,4 @@
-Promise.all = function <T extends Promise<T>[]>(promises: T) {
+Promise.all = function <T extends Promise<any>[]>(promises: T) {
   return new Promise<T[]>((resolve, reject) => {
     let result: T[] = [];
     let count = 0;
