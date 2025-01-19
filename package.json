@@ -18,5 +18,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "priority-queue-typescript": "^2.0.3"
   }
 }

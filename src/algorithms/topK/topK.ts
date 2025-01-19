@@ -1,9 +1,6 @@
 export default function topK(array: number[], k: number): number {
   let left = 0;
   let right = array.length - 1;
-  if (k < left || k > right) {
-    throw new Error('k is out of range');
-  }
   k = right - k + 1;
   while (left < right) {
     const part = partition(array, left, right);

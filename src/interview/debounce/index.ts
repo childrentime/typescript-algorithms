@@ -24,6 +24,26 @@ export function debounce<Args extends any[], F extends (...arg: Args) => any>(
   };
 }
 
+const debounce = (fn, wait, immediate) => {
+  let timer = null;
+  return args => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    if (immediate) {
+      if (!timer) {
+        fn(args);
+      }
+      timer = setTimeout(() => {
+        timer = null;
+      }, args);
+    }
+    timer = setTimeout(() => {
+      fn(args);
+    }, wait);
+  };
+};
+
 function sayHello() {
   console.log('hello world');
 }
